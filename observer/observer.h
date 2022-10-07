@@ -2,9 +2,13 @@
 #define _observer_h
 #include <list>
 #include <memory>
+#include <iostream>
 using std::shared_ptr;
 using std::weak_ptr;
 using std::list;
+using std::cout;
+
+using std::endl;
 class Iobserver {
 public:
 	~Iobserver(){}
@@ -33,6 +37,7 @@ public:
 				iter++;
 			}
 			else {
+				cout << "ob==nullptr" << endl;
 				iter=m_Iobserverlist.erase(iter);
 			}
 		}
